@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>displaying selected web pages</h1>
+        <table border="3px">
+            <th>pk</th>
+            <th>topic_name</th>
+            <th>name</th>
+            <th>url</th>
+            <th>email</th>
+            
+                {% for i in EQST  %}
+                <tr>
+                <td>{{i.pk}}</td>
+                <td>{{i.topic_name}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.url}}</td>
+                <td>{{i.email}}</td>
+                </tr>
+
+                {% endfor %}
+           
+        </table>
+    </center>
+</body>
+</html>
