@@ -37,3 +37,15 @@ def select_multiple(request):
         
     return render(request,'select_multiple.html',d)
 
+def checkbox(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
+    if request.method=='POST':
+        MTN=request.POST.getlist('tn')
+        EQST=Webpages.objects.none()
+        for i in MTN:
+            EQST=EQST|Webpages.objects.filter(topic_name=i)
+        d1={'EQST':EQST}
+        return render(request,'display_webpages.html',d1)
+            
+    return render(request,'checkbox.html',d)
